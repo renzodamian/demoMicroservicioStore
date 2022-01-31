@@ -1,16 +1,15 @@
 server:
   port: 8081
 spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/renzodamian/demoMicroservicioStore.git
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
   security:
     user:
       name: root
       password: s3cr3t
-  cloud:
-    config:
-      server:
-        bootstrap: true
-        git:
-          uri: https://github.com/renzodamian/demoMicroservicioStore
-          searchPaths: config-data
-          username: ${GIT_USER}
-          password: ${GIT_PASSWORD}
